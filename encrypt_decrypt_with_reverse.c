@@ -115,7 +115,7 @@ void subValue(char message[],int msgLength){
 int strLength(char message[]){
     int i=0;
     int length=0;
-    while(message[i]!=0){
+    while(message[i]!='\0'){
     length++;
     i++;
     }
