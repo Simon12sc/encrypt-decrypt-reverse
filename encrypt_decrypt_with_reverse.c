@@ -54,3 +54,96 @@ int main(){
 }
 
 
+
+void encrypt(){
+    char message[100];
+    int msgLength;
+    printf("\nEnter message to encrypt:\n");
+   fflush(stdin);
+     gets(message);
+     addValue(message,msgLength);
+     msgLength=strLength(message);
+     printf("Length:%d\n",msgLength);
+     printf("\nEncryption 1st process=>   ");
+     puts(message);
+         printf("\nEncryption 2st process=>   ");
+    reverse (message,0,msgLength-1);
+        puts(message);
+  printf("\nHence Message encrypted successfully!!\n");
+}
+
+
+
+void decrypt(){
+    char message[100];
+    int msgLength;
+    printf("\nEnter message to decrypt:\n");
+   fflush(stdin);
+     gets(message);
+     subValue(message,msgLength);
+     msgLength=strLength(message);
+     printf("Length:%d\n",msgLength);
+     printf("\nDecryption 1st process=>   ");
+     puts(message);
+         printf("\nDecryption 2st process=>   ");
+    reverse (message,0,msgLength-1);
+        puts(message);
+  printf("\nHence Message decrypted successfully!!\n");
+}
+
+
+
+void addValue(char message[],int msgLength){
+    int i=0;
+    while(message[i]!='\0'){
+        message[i]+=2;
+        i++;
+    } 
+}
+
+
+void subValue(char message[],int msgLength){
+    int i=0;
+    while(message[i]!='\0'){
+        message[i]-=2;
+        i++;
+    } 
+}
+
+
+
+int strLength(char message[]){
+    int i=0;
+    int length=0;
+    while(message[i]!=0){
+    length++;
+    i++;
+    }
+    return length;
+}
+
+
+
+void reverse(char message[],int start,int end){
+    char temp;
+    if(start>=end){
+        return;
+    }
+    temp=message[start];
+    message[start]=message[end];
+    message[end]=temp;
+    reverse(message,start+1,end-1);
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
